@@ -4,7 +4,8 @@ int main()
 {
 	FILE *fp;
 	int num;
-	char buffer[100];
+	char kg[100];
+	char date[100];
 	while (1)
 	{
 		printf("메뉴를 선택해주세요:\n\n");
@@ -15,23 +16,27 @@ int main()
 		switch (num)
 		{
 		case 1:
-            fp = fopen("record.txt", "a");
-            printf("날짜,몸무게를 입력하시오(예: 2020/03/05 75kg) :");
-            getchar();
-            gets_s(buffer, 100);
-            fputs(buffer, fp);
-            fprintf(fp, "\n", buffer);
-            break;
+			fp = fopen("record.txt", "a");
+			printf("날짜를 입력하시오(예 2020/03/05): ");
+			getchar();
+			gets_s(date, 100);
+			fputs(date, fp);
+			fprintf(fp, ": ", date);
+			printf("몸무게를 입력하시오(예: 100kg): ");
+			gets_s(kg, 100);
+			fputs(kg, fp);
+			fprintf(fp, "\n", kg);
+			break;
 		case 2:
 			fp = fopen("record.txt", "r");
-			while(fgets(buffer, 100, fp)!=NULL)
-				printf("%s\n", buffer);
+			while (fgets(kg, 100, fp) != NULL)
+				printf("%s\n", kg);
 			break;
 		case 3:
 			exit(1);
 			break;
 		}
-		
+
 	}
 	fclose(fp);
 }
