@@ -7,10 +7,10 @@ int main()
 	char buffer[100];
 	while (1)
 	{
-		printf("메뉴를 선택해주세요:\n");
-		printf("1. 기록 추가하기\n");
-		printf("2. 기록 확인하기\n");
-		printf("3. 종료\n");
+		printf("메뉴를 선택해주세요:\n\n");
+		printf("1. 기록 추가하기\n\n");
+		printf("2. 기록 확인하기\n\n");
+		printf("3. 종료\n\n");
 		scanf("%d", &num);
 		switch (num)
 		{
